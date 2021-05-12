@@ -1,0 +1,63 @@
+@import "setting";
+
+.serviceAhead {
+    margin-top: 70px;
+    margin-bottom: 110px;
+
+    @include mq(sp) {
+        margin-top: 40px;
+        margin-bottom: 80px;
+    }
+}
+
+.serviceAhead__inner {
+    width: 1110px;
+}
+
+.serviceAhead__list {
+    width: 100%;
+}
+
+.serviceAhead__item {
+    display: flex;
+
+    & + & {
+        margin-top: 60px;
+    }
+
+    @include mq(sp) {
+        display: block;
+
+        & + & {
+            margin-top: 50px;
+        }
+    }
+}
+
+.serviceAhead__img {
+    width: 40.009%;
+
+    @include mq(sp) {
+        width: 100%;
+    }
+}
+
+.serviceAhead__body {
+    width: 59.9099%;
+    margin-left: 50px;
+
+    @include mq(sp) {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+.serviceAhead__body-title {
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    margin-bottom: 20px;
+
+    @include mq(sp) {
+        margin-bottom: 15px;
+    }
+}

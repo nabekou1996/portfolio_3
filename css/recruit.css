@@ -1,0 +1,388 @@
+@charset "UTF-8";
+/* リセットCSS
+===================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, button, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+li, dd {
+  list-style-type: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  font-weight: normal;
+  text-align: left;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+/* 基本設定
+===================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-wrap: break-word;
+  color: #333;
+  font-family: "Montserrat", "ヒラギノ角ゴシック", "Hiragino Sans", "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
+  line-height: 1.8;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 3.3333;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: calc(15px - 1px);
+    line-height: 1.7857;
+  }
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  width: 100%;
+}
+
+.util-title-box {
+  color: #391E88;
+  text-align: center;
+}
+
+.util-title-box .util-title {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 0.8889;
+}
+
+.util-title-box .util-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .util-title-box {
+    margin-bottom: 30px;
+  }
+  .util-title-box .util-title {
+    font-size: 30px;
+  }
+}
+
+.util-link-box {
+  text-align: center;
+}
+
+.util-link {
+  display: inline-block;
+  text-align: center;
+  background: linear-gradient(to left, #250D65, #7633A4);
+  width: 200px;
+  height: 60px;
+  border-radius: 50px;
+  line-height: 60px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1;
+  transition: background-color 0.2s, color 0.2s;
+  transition: all .4s;
+}
+
+.util-link:hover {
+  opacity: 0.6;
+}
+
+.link-underline {
+  display: inline-block;
+  position: relative;
+}
+
+.link-underline:after {
+  background: #fff;
+  bottom: 0;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transition: all .4s;
+  width: 0;
+}
+
+.link-underline:hover:after {
+  width: 100%;
+}
+
+.inner {
+  width: 1380px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1380px) {
+  .inner {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 1379px) {
+  .inner {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .inner {
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .inner {
+    width: 747px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.hidden-pc {
+  display: block;
+}
+
+@media (min-width: 1380px) {
+  .hidden-pc {
+    display: none;
+  }
+}
+
+.hidden-tab {
+  display: block;
+}
+
+@media (max-width: 1379px) {
+  .hidden-tab {
+    display: none;
+  }
+}
+
+.hidden-sp {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .hidden-sp {
+    display: none;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.show-pc {
+  display: none;
+}
+
+@media (min-width: 1380px) {
+  .show-pc {
+    display: block;
+  }
+}
+
+.show-tab {
+  display: none;
+}
+
+@media (max-width: 1379px) {
+  .show-tab {
+    display: block;
+  }
+}
+
+.show-sp {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .show-sp {
+    display: block;
+  }
+}
+
+.recruitAhead {
+  background: url("https://nabekou1996.github.io/portfolio_3../images/recruit-bg.jpg");
+  padding: 116px 0 110px;
+}
+
+@media (max-width: 767px) {
+  .recruitAhead {
+    padding: 40px 0 80px;
+  }
+}
+
+.recruitAhead__title-box .util-title {
+  font-size: 72px;
+}
+
+@media (max-width: 767px) {
+  .recruitAhead__title-box .util-title {
+    font-size: 48px;
+    line-height: 1.1667;
+  }
+}
+
+.recruitAhead__title-box p:nth-child(2) {
+  font-size: 32px;
+  font-weight: normal;
+  padding: 15px 0 30px;
+}
+
+@media (max-width: 767px) {
+  .recruitAhead__title-box p:nth-child(2) {
+    font-size: 18px;
+  }
+}
+
+.recruitAhead__title-box p:nth-child(3) {
+  font-size: 16px;
+  color: #333;
+}
+
+@media (max-width: 767px) {
+  .recruitAhead__title-box p:nth-child(3) {
+    font-size: 15px;
+  }
+}
+
+.recruitAhead__hero {
+  margin-top: 40px;
+  height: 779px;
+  min-height: 100%;
+  background: url("https://nabekou1996.github.io/portfolio_3../images/recruit-hero.png");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .recruitAhead__hero {
+    height: 290px;
+  }
+}
+
+.recruitAhead__job {
+  margin-top: 70px;
+  width: 1110px;
+}
+
+@media (max-width: 767px) {
+  .recruitAhead__job {
+    margin-top: 40px;
+  }
+}
+
+.recruitAhead__job-wrap {
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 40px;
+  padding: 60px 90px;
+}
+
+@media (max-width: 767px) {
+  .recruitAhead__job-wrap {
+    padding: 30px 20px 33px;
+    margin-top: 30px;
+  }
+}
+
+.recruitAhead__job-wrap .ahead-list {
+  max-width: 100%;
+  margin: 0 auto 50px;
+}
+
+.recruitAhead__job-wrap .ahead-list .ahead-item p:nth-child(1) {
+  width: 180px;
+  max-width: 100%;
+  padding-left: 21px;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .recruitAhead__job-wrap .ahead-list .ahead-item p:nth-child(1) {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.recruitAhead__job-wrap span {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.recruitAhead__job-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+.recruitAhead__movie {
+  width: 1110px;
+  margin-top: 140px;
+}
+
+.recruitAhead__movie-box {
+  margin-top: 40px;
+}

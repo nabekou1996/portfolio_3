@@ -1,0 +1,315 @@
+@charset "UTF-8";
+
+// -----
+// 設定
+// -----
+
+// 色
+$color-main: #3f51b5; // ベース色
+$color-active: #e81919; // アクティブ色
+$color-background: #fff; // 背景色
+$color-text: #333; // テキスト色
+$hover-opacity: 0.6; // 透過度
+
+// レイアウト幅
+$layout-width-canvas: 1440px;
+$layout-width-inner: 1380px;
+
+// 階層
+$layer: (
+    modal: 100, // モダール
+    drawer: 40, // ドロワー
+    floating: 30, // フローティングアイテム
+    header: 20, // ヘッダー
+    footer: 10, // フッター
+    default: 1,
+);
+
+// 余白
+$padding-pc: 30px;
+$padding-tab: 30px;
+$padding-sp: 20px;
+
+@mixin padding-inner {
+    @include mq (pc) {
+        padding-left: $padding-pc;
+        padding-right: $padding-pc;
+    }
+    @include mq (tab) {
+        padding-left: $padding-tab;
+        padding-right: $padding-pc;
+    }
+    @include mq (sp) {
+        padding-left: $padding-sp;
+        padding-right: $padding-pc;
+    }
+}
+
+// ヘッダー高さ
+$header-height-pc: 65px;
+$header-height-tab: 65px;
+$header-height-sp: 62px;
+@mixin header-hight {
+    @include mq(pc) {
+        height: $header-height-pc;
+    }
+    @include mq(tab) {
+        height: $header-height-tab;
+    }
+    @include mq(sp) {
+        height: $header-height-sp;
+    }
+}
+
+// フォント
+$font-family-default: "Montserrat", "ヒラギノ角ゴシック","Hiragino Sans", "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro",
+    "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
+$font-family-english: "Montserrat", sans-serif;
+$font-family-base: $font-family-default;
+$font-size-base: 15px;
+$font-weight-base: 300;
+$font-weight-bold: 600;
+$line-height-base: 1.8;
+$letter-spacing-base: 3.3333;
+
+// ブレークポイント
+$breakpoints: (
+    "sp": "(max-width: 767px)",
+    "tab": "(max-width: #{$layout-width-inner - 1px})",
+    "pc": "(min-width: #{$layout-width-inner})",
+);
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+/* リセットCSS
+===================================== */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, button, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+html {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+li, dd {
+    list-style-type: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    font-weight: normal;
+    text-align: left;
+    vertical-align: middle;
+}
+
+q, blockquote {
+    quotes: none;
+}
+
+q {
+    &:before, &:after {
+        content: "";
+        content: none;
+    }
+}
+
+blockquote {
+    &:before, &:after {
+    content: "";
+    content: none;
+    }
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+img {
+    border: none;
+    vertical-align: bottom;
+}
+
+
+/* 基本設定
+===================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-wrap: break-word;
+    color: $color-text;
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    letter-spacing: $letter-spacing-base;
+
+    @include mq(sp) {
+        font-size: calc(#{$font-size-base} - 1px);
+        line-height: 1.7857;
+    }
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: $color-text;
+}
+
+img {
+    width: 100%;
+}
+
+.util-title-box {
+    color: #391E88;
+    text-align: center;
+
+    .util-title {
+        font-weight: $font-weight-bold;
+        font-size: 36px;
+        line-height: 0.8889;
+    }
+    .util-subtitle {
+        font-size: 13px;
+        font-weight: $font-weight-bold;
+    }
+
+    @include mq(sp) {
+        margin-bottom: 30px;
+
+        .util-title {
+            font-size: 30px;
+        }
+    }
+}
+
+.util-link-box {
+    text-align: center;
+}
+
+.util-link {
+    display: inline-block;
+    text-align: center;
+    background: linear-gradient(to left , #250D65, #7633A4);
+    width: 200px;
+    height: 60px;
+    border-radius: 50px;
+    line-height: 60px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 1;
+    transition: background-color 0.2s, color 0.2s;
+    transition: all .4s;
+
+    &:hover {
+        opacity: $hover-opacity;
+    }
+}
+
+.link-underline {
+    display: inline-block;
+    position: relative;
+    &:after {
+        background: #fff;
+        bottom: 0;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        transition: all .4s;
+        width: 0;
+    }
+
+    &:hover:after {
+        width: 100%;
+    }
+}
+
+.inner {
+    @include padding-inner();
+    width: $layout-width-inner;
+    max-width: 100%;
+    margin: 0 auto;
+    @include mq(sp) {
+        width: 747px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-pc {
+    display: block;
+
+    @include mq(pc) {
+        display: none;
+    }
+}
+
+.hidden-tab {
+    display: block;
+
+    @include mq(tab) {
+        display: none;
+    }
+}
+
+.hidden-sp {
+    display: block;
+
+    @include mq(sp) {
+        display: none;
+    }
+}
+
+.show {
+    display: block;
+}
+
+.show-pc {
+    display: none;
+
+    @include mq(pc) {
+        display: block;
+    }
+}
+
+.show-tab {
+    display: none;
+
+    @include mq(tab) {
+        display: block;
+    }
+}
+
+.show-sp {
+    display: none;
+
+    @include mq(sp) {
+        display: block;
+    }
+}

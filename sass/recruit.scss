@@ -1,0 +1,121 @@
+@import "setting";
+
+.recruitAhead {
+    background: url("https://nabekou1996.github.io/portfolio_3../images/recruit-bg.jpg");
+    padding: 116px 0 110px;
+
+    @include mq(sp) {
+        padding: 40px 0 80px;
+    }
+}
+
+.recruitAhead__title-box {
+
+    .util-title {
+        font-size: 72px;
+
+        @include mq(sp) {
+            font-size: 48px;
+            line-height: 1.1667;
+        }
+    }
+
+    p {
+        &:nth-child(2) {
+            font-size: 32px;
+            font-weight: normal;
+            padding: 15px 0 30px;
+
+            @include mq(sp) {
+                font-size: 18px;
+            }
+        }
+
+        &:nth-child(3) {
+            font-size: 16px;
+            color: #333;
+
+            @include mq(sp) {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.recruitAhead__hero {
+    margin-top: 40px;
+    height: 779px;
+    min-height: 100%;
+    background: url("https://nabekou1996.github.io/portfolio_3../images/recruit-hero.png");
+    background-position: center;
+    background-size: cover;
+
+    @include mq(sp) {
+        height: 290px;
+    }
+
+}
+
+.recruitAhead__job {
+    margin-top: 70px;
+    width: 1110px;
+
+    @include mq(sp) {
+        margin-top: 40px;
+    }
+}
+
+.recruitAhead__job-wrap {
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 60px 90px;
+
+    @include mq(sp) {
+        padding: 30px 20px 33px;
+        margin-top: 30px;
+    }
+
+    .ahead-list {
+        max-width: 100%;
+        margin: 0 auto 50px;
+
+        .ahead-item {
+            p {
+                &:nth-child(1) {
+                    width: 180px;
+                    max-width: 100%;
+                    padding-left: 21px;
+                    font-weight: $font-weight-bold;
+
+                    @include mq(sp) {
+                        width: 100%;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    span {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+.recruitAhead__job-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    padding-bottom: 20px;
+}
+
+.recruitAhead__movie {
+    width: 1110px;
+    margin-top: 140px;
+}
+
+.recruitAhead__movie-box {
+    margin-top: 40px;
+}
